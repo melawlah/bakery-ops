@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     // Fetch available products for this business
     const { data: products } = await supabaseAdmin
       .from('products')
-      .select('name')
+      .select('id, name, unit_price')
       .eq('business_id', businessId)
       .eq('active', true)
 
