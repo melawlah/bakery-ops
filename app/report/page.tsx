@@ -57,17 +57,17 @@ const CLIENT_PERFORMANCE: ClientPerformance[] = [
 ]
 
 const PRODUCT_PERFORMANCE: ProductPerformance[] = [
-  { name: 'Sourdough',   loaves: 285, revenue: 1852, sellThrough: 'fast',   weeksSlowing: 0 },
-  { name: 'Brown Bread', loaves: 140, revenue: 700,  sellThrough: 'normal', weeksSlowing: 0 },
-  { name: 'Whole Wheat', loaves: 115, revenue: 632,  sellThrough: 'normal', weeksSlowing: 1 },
-  { name: 'Rye Bread',   loaves: 60,  revenue: 360,  sellThrough: 'slow',   weeksSlowing: 2 },
+  { name: 'Agege Bread',   loaves: 285, revenue: 1852, sellThrough: 'fast',   weeksSlowing: 0 },
+  { name: 'Sardine Bread', loaves: 140, revenue: 700,  sellThrough: 'normal', weeksSlowing: 0 },
+  { name: 'Coconut Bread', loaves: 115, revenue: 632,  sellThrough: 'normal', weeksSlowing: 1 },
+  { name: 'Mini Loaves',   loaves: 60,  revenue: 360,  sellThrough: 'slow',   weeksSlowing: 2 },
 ]
 
 const AI_FLAGS: AIFlag[] = [
   {
     type: 'opportunity',
-    title: 'Sourdough demand is outpacing supply',
-    body: "Two of your fastest-growing clients — St. Lawrence and Roncesvalles — both sold out of sourdough mid-week for the third consecutive week. Combined they're ordering 135 loaves but signalling they could absorb 160–170. Consider offering a capacity increase proactively before they look elsewhere.",
+    title: 'Agege bread demand is outpacing supply',
+    body: "Two of your fastest-growing clients — St. Lawrence and Roncesvalles — both sold out of agege bread mid-week for the third consecutive week. Combined they're ordering 135 loaves but signalling they could absorb 160–170. Consider offering a capacity increase proactively before they look elsewhere.",
   },
   {
     type: 'warning',
@@ -76,8 +76,8 @@ const AI_FLAGS: AIFlag[] = [
   },
   {
     type: 'warning',
-    title: 'Rye bread margin is thinning',
-    body: "Rye bread has the highest ingredient cost per loaf and has had slow sell-through at Kensington for two consecutive weeks. At current volumes it contributes less than 8% of revenue while consuming roughly 14% of ingredient spend. Worth reviewing whether the price point or the production volume needs adjusting.",
+    title: 'Mini loaves margin is thinning',
+    body: "Mini loaves has the highest ingredient cost per loaf and has had slow sell-through at Kensington for two consecutive weeks. At current volumes it contributes less than 8% of revenue while consuming roughly 14% of ingredient spend. Worth reviewing whether the price point or the production volume needs adjusting.",
   },
   {
     type: 'info',
@@ -88,11 +88,11 @@ const AI_FLAGS: AIFlag[] = [
 
 const AI_NARRATIVE = `This was your strongest week in five weeks. Revenue came in at $3,420 — up 7.5% on last week and 20.4% on five weeks ago. More importantly the growth is coming from the right place: clients who are selling fast and coming back for more, not from discounting or one-off bulk orders.
 
-The headline story this week is sourdough. It accounted for 47.5% of all loaves and generated $1,852 in revenue — your single highest-earning product by a significant margin. Every client who stocks it is selling through faster than they can reorder. That's a strong signal that your current price point may actually be conservative given the demand.
+The headline story this week is agege bread. It accounted for 47.5% of all loaves and generated $1,852 in revenue — your single highest-earning product by a significant margin. Every client who stocks it is selling through faster than they can reorder. That's a strong signal that your current price point may actually be conservative given the demand.
 
 The concern worth watching is at the bottom of the client list. The Junction Pantry has been quietly shrinking their orders while other clients grow. They haven't flagged anything explicitly but the data pattern — three consecutive reductions with slow sell-through — is consistent with a client reconsidering the relationship. It's not urgent yet but it's worth a conversation before it becomes a gap in your weekly volume.
 
-On costs: ingredient spend was $945 this week, giving you a gross margin of 72.4%. That's healthy for a wholesale bakery. The only product applying pressure to that margin is rye bread, which has both the highest cost per loaf and the slowest sell-through. It's worth a deliberate decision — either price it up to reflect the cost, or reduce the production volume to match what's actually selling.
+On costs: ingredient spend was $945 this week, giving you a gross margin of 72.4%. That's healthy for a wholesale bakery. The only product applying pressure to that margin is mini loaves, which has both the highest cost per loaf and the slowest sell-through. It's worth a deliberate decision — either price it up to reflect the cost, or reduce the production volume to match what's actually selling.
 
 Overall: the business is growing steadily and the fundamentals are strong. The next meaningful decision in front of you is whether to proactively approach new retail partners to add a sixth client, which would reduce your revenue concentration risk and give your growing production capacity somewhere to go.`
 

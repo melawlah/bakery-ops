@@ -38,14 +38,14 @@ const MOCK_ORDERS: Order[] = [
     channel: 'whatsapp',
     status: 'confirmed',
     items: [
-      { product: 'Sourdough',   quantity: 80, unitPrice: 6.50 },
-      { product: 'Brown Bread', quantity: 45, unitPrice: 5.00 },
-      { product: 'Whole Wheat', quantity: 25, unitPrice: 5.50 },
+      { product: 'Agege Bread',   quantity: 80, unitPrice: 6.50 },
+      { product: 'Sardine Bread', quantity: 45, unitPrice: 5.00 },
+      { product: 'Coconut Bread', quantity: 25, unitPrice: 5.50 },
     ],
     feedback: {
       sellThroughSpeed: 'fast',
       sentiment: 'positive',
-      signals: ['Sold out by Tuesday both days', 'Customers asking for more sourdough'],
+      signals: ['Sold out by Tuesday both days', 'Customers asking for more agege bread'],
     },
     aiConfidence: 'high',
     needsReview: false,
@@ -58,9 +58,9 @@ const MOCK_ORDERS: Order[] = [
     channel: 'email',
     status: 'pending',
     items: [
-      { product: 'Sourdough',   quantity: 40, unitPrice: 6.50 },
-      { product: 'Rye Bread',   quantity: 20, unitPrice: 6.00 },
-      { product: 'Whole Wheat', quantity: 30, unitPrice: 5.50 },
+      { product: 'Agege Bread',   quantity: 40, unitPrice: 6.50 },
+      { product: 'Mini Loaves',   quantity: 20, unitPrice: 6.00 },
+      { product: 'Coconut Bread', quantity: 30, unitPrice: 5.50 },
     ],
     feedback: {
       sellThroughSpeed: 'normal',
@@ -69,7 +69,7 @@ const MOCK_ORDERS: Order[] = [
     },
     aiConfidence: 'medium',
     needsReview: true,
-    reviewReason: "'Rye Bread' is not in your current product list — confirm whether you carry this before adding to the order.",
+    reviewReason: "'Mini loaves' is not in your current product list — confirm whether you carry this before adding to the order.",
     receivedAt: 'Mon 9:02 am',
   },
   {
@@ -78,8 +78,8 @@ const MOCK_ORDERS: Order[] = [
     channel: 'sms',
     status: 'confirmed',
     items: [
-      { product: 'Sourdough',   quantity: 30, unitPrice: 6.50 },
-      { product: 'Brown Bread', quantity: 30, unitPrice: 5.00 },
+      { product: 'Agege Bread',   quantity: 30, unitPrice: 6.50 },
+      { product: 'Sardine Bread', quantity: 30, unitPrice: 5.00 },
     ],
     feedback: {
       sellThroughSpeed: 'normal',
@@ -97,13 +97,13 @@ const MOCK_ORDERS: Order[] = [
     channel: 'whatsapp',
     status: 'pending',
     items: [
-      { product: 'Sourdough',   quantity: 55, unitPrice: 6.50 },
-      { product: 'Whole Wheat', quantity: 20, unitPrice: 5.50 },
+      { product: 'Agege Bread',   quantity: 55, unitPrice: 6.50 },
+      { product: 'Sardine Bread', quantity: 20, unitPrice: 5.50 },
     ],
     feedback: {
       sellThroughSpeed: 'fast',
       sentiment: 'positive',
-      signals: ['Sourdough flying out', 'Customers love the crust'],
+      signals: ['Agege bread flying out', 'Customers love the crust'],
     },
     aiConfidence: 'medium',
     needsReview: true,
@@ -116,8 +116,8 @@ const MOCK_ORDERS: Order[] = [
     channel: 'email',
     status: 'fulfilled',
     items: [
-      { product: 'Brown Bread', quantity: 25, unitPrice: 5.00 },
-      { product: 'Whole Wheat', quantity: 15, unitPrice: 5.50 },
+      { product: 'Sardine Bread', quantity: 25, unitPrice: 5.00 },
+      { product: 'Coconut Bread', quantity: 15, unitPrice: 5.50 },
     ],
     feedback: {
       sellThroughSpeed: 'slow',
@@ -132,10 +132,10 @@ const MOCK_ORDERS: Order[] = [
 ]
 
 const UNIT_PRICES: Record<string, number> = {
-  'Sourdough':   6.50,
-  'Brown Bread': 5.00,
-  'Whole Wheat': 5.50,
-  'Rye Bread':   6.00,
+  'Agege Bread':   6.50,
+  'Sardine Bread': 5.00,
+  'Coconut Bread': 5.50,
+  'Mini Loaves':   6.00,
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────────

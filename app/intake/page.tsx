@@ -29,16 +29,16 @@ type InterpretedOrder = {
 const MOCK_CLIENT = {
   name: 'St. Lawrence Market Grocers',
   lastWeekOrder: [
-    { product: 'Sourdough', quantity: 60 },
-    { product: 'Brown Bread', quantity: 40 },
-    { product: 'Whole Wheat', quantity: 25 },
+    { product: 'Agege Bread', quantity: 60 },
+    { product: 'Sardine Bread', quantity: 40 },
+    { product: 'Coconut Bread', quantity: 25 },
   ],
 }
 
 const SAMPLE_MESSAGES = [
-  "Hey! Great week overall — sourdough flew off the shelves, sold out by Tuesday both days. Customers have been asking for more. Brown bread was steady. Can we do 80 sourdough, 45 brown, and keep whole wheat the same at 25?",
-  "Slow week honestly, think it was the long weekend. Still had sourdough left on Thursday. Maybe drop it to 45 this week? Brown bread was fine, keep that. Whole wheat maybe a few more, like 30?",
-  "The sourdough was incredible this week, customers keep coming back for it. We'll take our usual plus maybe 10 or 15 extra sourdough, not sure yet. Brown bread the same. Can you add rye bread to our order if you have it?",
+  "Hey! Great week overall — agege bread flew off the shelves, sold out by Tuesday both days. Customers have been asking for more. Sardine bread was steady. Can we do 80 agege bread, 45 sardine, and keep coconut bread the same at 25?",
+  "Slow week honestly, think it was the long weekend. Still had agege bread left on Thursday. Maybe drop it to 45 this week? Sardine bread was fine, keep that. Coconut bread maybe a few more, like 30?",
+  "The agege bread was incredible this week, customers keep coming back for it. We'll take our usual plus maybe 10 or 15 extra agege bread, not sure yet. Sardine bread the same. Can you add mini loaves to our order if you have it?",
 ]
 
 // ── Small components ───────────────────────────────────────────────────────
@@ -1126,10 +1126,10 @@ function delay(ms: number) {
 function getMockInterpretation(message: string): InterpretedOrder {
   const lower = message.toLowerCase()
 
-  const hasSourdough = lower.includes('sourdough')
-  const hasBrown     = lower.includes('brown')
-  const hasWheat     = lower.includes('whole wheat') || lower.includes('wheat')
-  const hasRye       = lower.includes('rye')
+  const hasSourdough = lower.includes('agege bread') || lower.includes('agege')
+  const hasBrown     = lower.includes('sardine bread') || lower.includes('sardine')
+  const hasWheat     = lower.includes('coconut bread') || lower.includes('coconut')
+  const hasRye       = lower.includes('mini loaves') || lower.includes('mini')
   const isAmbiguous  = lower.includes('maybe') || lower.includes('not sure') || lower.includes('or')
   const isSlow       = lower.includes('slow') || lower.includes('still had') || lower.includes('left on')
   const isFast       = lower.includes('flew') || lower.includes('sold out') || lower.includes('flying')
@@ -1139,12 +1139,12 @@ function getMockInterpretation(message: string): InterpretedOrder {
   const wheatQty     = lower.includes('30') ? 30 : 25
 
   const products: ProductInterpretation[] = []
-  if (hasSourdough) products.push({ name: 'Sourdough',   quantity: sourdoughQty, confidence: isAmbiguous ? 'low' : 'high' })
-  if (hasBrown)     products.push({ name: 'Brown Bread', quantity: brownQty,     confidence: 'high' })
-  if (hasWheat)     products.push({ name: 'Whole Wheat', quantity: wheatQty,     confidence: isAmbiguous ? 'medium' : 'high' })
-  if (hasRye)       products.push({ name: 'Rye Bread',   quantity: 20,           confidence: 'low' })
+  if (hasSourdough) products.push({ name: 'Agege Bread',   quantity: sourdoughQty, confidence: isAmbiguous ? 'low' : 'high' })
+  if (hasBrown)     products.push({ name: 'Sardine Bread', quantity: brownQty,     confidence: 'high' })
+  if (hasWheat)     products.push({ name: 'Coconut Bread', quantity: wheatQty,     confidence: isAmbiguous ? 'medium' : 'high' })
+  if (hasRye)       products.push({ name: 'Mini Loaves',   quantity: 20,           confidence: 'low' })
   if (products.length === 0)
-    products.push({ name: 'Sourdough', quantity: 60, confidence: 'medium' })
+    products.push({ name: 'Agege Bread', quantity: 60, confidence: 'medium' })
 
   const needsReview = isAmbiguous || hasRye || sourdoughQty > 75
 
@@ -1159,7 +1159,7 @@ function getMockInterpretation(message: string): InterpretedOrder {
       needs_human_review: needsReview,
       reason: needsReview
         ? hasRye
-          ? "'Rye Bread' is not in your current product list — confirm whether you carry this before adding to the order."
+          ? "'Mini loaves' is not in your current product list — confirm whether you carry this before adding to the order."
           : isAmbiguous
           ? "Client used uncertain language ('maybe', 'not sure') — confirm exact quantities before committing to production."
           : "Order is more than 30% above last week's quantity — flagged for your awareness."
