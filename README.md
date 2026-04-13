@@ -1,6 +1,6 @@
-# 🍞 BakeryOps
+# BakeryOps
 
-AI-native operations management for wholesale bakeries. Built for a real bakery, submitted as part of the [Wealthsimple AI Builders](https://www.wealthsimple.com/en-ca/careers/ai-builders) application.
+AI-native operations management for wholesale bakeries. Built for a real bakery.
 
 **[→ Live demo](https://bakeryops.vercel.app)**
 
