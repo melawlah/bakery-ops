@@ -2,7 +2,7 @@
 
 AI-native operations management for wholesale bakeries. Built for a real bakery.
 
-**[→ Live demo](https://bakeryops.vercel.app)**
+**[→ Live demo](https://bakery-ops.vercel.app/)**
 
 ---
 
